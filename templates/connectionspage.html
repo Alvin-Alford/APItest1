@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections</title>
+</head>
+<body>
+    <h1>Connected Devices</h1>
+    <ul id="deviceList">
+        </ul>
+    <script>
+        var devices = []; // List to store device data
+
+        function populateList() {
+            var deviceList = document.getElementById("deviceList");
+            deviceList.innerHTML = ""; // Clear existing list items
+
+            for (var i = 0; i < devices.length; i++) {
+                var deviceItem = document.createElement("li");
+                deviceItem.innerText = devices[i].User + " - " + devices[i].Description;
+                deviceItem.addEventListener("click", function() {
+                    connectToDevice(devices[i].User); // Call function to connect on click
+                });
+                deviceList.appendChild(deviceItem);
+            }
+        }
+
+        function connectToDevice(user) {
+            // Implement logic to emit a socket event with the user name
+            // to initiate device communication (replace with your actual code)
+            socket.emit('click_name', { description: "Connecting to " + user });
+        }
+
+        // Assuming you have a script tag including Socket.io library
+        socket.on('is_device', function(data) {
+            alert(data.Isdevice); // Temporary alert for demonstration
+        });
+
+        // Fetch device data (replace with your data fetching logic)
+        fetch('data.txt')
+            .then(response => response.json())
+            .then(data => {
+                devices = data;
+                populateList();
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
