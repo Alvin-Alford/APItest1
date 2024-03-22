@@ -1,1 +1,23 @@
-
+[
+    {
+        "Device": "AL",
+        "Version": "AL",
+        "Model": "AL",
+        "SerialNumber": "AL",
+        "OS": "ALVINOS",
+        "OSVersion": "1ALVIN1",
+        "OSBuild": "ALVIN",
+        "Name": "wALVIN8",
+        "Password": "ALVINALVINALVINALVINALVIN"
+    },
+    {
+        "Device": "ALVIN",
+        "Version": "ALVIN",
+        "Model": "MALVIN",
+        "SerialNumber": "ALIN",
+        "OS": "ALINOS",
+        "OSVersion": "ALVIN1",
+        "OSBuild": "ALVIN0",
+        "Name": "ALVIN28"
+    }
+]
